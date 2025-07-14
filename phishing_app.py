@@ -10,7 +10,7 @@ with open("phishing_model.pkl", "rb") as f:
     model = pickle.load(f)
 
 # Streamlit UI
-st.title("🔐 Phishing Website Detector (Mini Project)")
+st.title("🔐 Phishing Website Detector")
 st.markdown("Enter a website URL and find out if it's **Phishing** or **Legitimate** 🕵️‍♂️")
 
 # User input
