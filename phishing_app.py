@@ -29,15 +29,16 @@ def extract_features(url):
     return np.array([has_ip, has_at, url_length]).reshape(1, -1)
 
 # Check button
-if st.button("🔎 Check Now"):
-    if url:
+if st.button("🔍 Check Now"):
+    if not is_valid_url(url):
+        st.error("🚫 Invalid URL format. Please enter a valid URL.")
+    else:
         features = extract_features(url)
-        prediction = model.predict(features)[0]
+        prediction = model.predict([features])[0]
+
         if prediction == 1:
-            st.error("🚨 This is a Phishing Website!")
+            st.error("🎉 This is a Phishing Website!")
         else:
             st.success("✅ This is a Legitimate Website.")
-    else:
-        st.warning("⚠️ Please enter a valid URL.")
 
      
