@@ -40,15 +40,4 @@ if st.button("🔎 Check Now"):
     else:
         st.warning("⚠️ Please enter a valid URL.")
 
-        #1
-        if st.button("🔍 Check Now"):
-    if not is_valid_url(url):
-        st.error("🚫 Invalid URL format. Please enter a valid URL.")
-    else:
-        features = extract_features(url)
-        prediction = model.predict([features])[0]
-
-        if prediction == 1:
-            st.error("🎉 This is a Phishing Website!")
-        else:
-            st.success("✅ This is a Legitimate Website.")
+     
