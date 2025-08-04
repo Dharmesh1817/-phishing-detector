@@ -1,6 +1,6 @@
 streamlit
-pandas
 scikit-learn
+pandas
 joblib
-validators
-numpy
+requests
+python-whois
